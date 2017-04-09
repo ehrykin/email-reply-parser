@@ -138,12 +138,6 @@
                       )
                     )]
 
-    (add-watch email-message-local :test-watch (fn [k r old new]
-                                                 (when (true? (vector? new))
-                                                   (print "!!!!")
-                                                   )
-                                                 ))
-
     (when (true? (.find multi-quote))
       (swap! working-text
              #(let [new-quote-header (-> (.group multi-quote) (string/replace "\n" ""))]
